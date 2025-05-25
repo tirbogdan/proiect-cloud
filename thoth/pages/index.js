@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="homepage-container">
       <h1>
-        "Only he who has the courage to enter the library of the god Thoth can
-        discover true wisdom."
+        &quot;Only he who has the courage to enter the library of the god Thoth
+        can discover true wisdom.&quot;
       </h1>
       <button onClick={() => (window.location.href = "/auth")}>
         Start the quiz

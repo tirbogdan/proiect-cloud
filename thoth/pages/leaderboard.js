@@ -5,7 +5,7 @@ import { withAuth } from "../lib/withAuth";
 
 export const getServerSideProps = withAuth();
 
-export default function leaderboard() {
+export default function Leaderboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [list, setList] = useState([]);
