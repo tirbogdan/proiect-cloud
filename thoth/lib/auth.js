@@ -1,11 +1,11 @@
 import jwt from "jsonwebtoken";
-import cookie from "cookie";
+import { parse } from "cookie";
 
 export function verifyAuth(cookieString, jwtSecret) {
   if (!cookieString) return false;
 
   try {
-    const cookies = cookie.parse(cookieString);
+    const cookies = parse(cookieString);
     const token = cookies.token;
 
     if (!token) return false;
@@ -14,6 +14,7 @@ export function verifyAuth(cookieString, jwtSecret) {
     return true;
   } catch (err) {
     console.error("verifyAuth error:", err);
+    console.error("cookieString", cookieString);
     return false;
   }
 }
