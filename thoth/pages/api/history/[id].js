@@ -35,11 +35,11 @@ export default async function handler(req, res) {
     res.status(200).json({
       id: quiz._id.toString(),
       date: quiz.date,
-      questions: quiz.questions.map((quiz, answerIndex) => ({
-        question: quiz.question,
-        answers: quiz.answers,
-        correctIndex: quiz.correctIndex,
-        userAnswerIndex: quiz.userAnswers[answerIndex],
+      questions: quiz.questions.map((q, idx) => ({
+        question: q.question,
+        answers: q.answers,
+        correctIndex: q.correctIndex,
+        userAnswerIndex: quiz.userAnswers[idx],
       })),
       score: quiz.score,
     });
