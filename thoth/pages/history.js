@@ -59,7 +59,7 @@ export default function HistoryPage() {
 
   return (
     <div className="quiz-container history-wrapper">
-      <h2>Istoricul testelor</h2>
+      <h2>Quiz history</h2>
       <div className="history-buttons">
         <button className="submit-button" onClick={() => router.push("/")}>
           Start a new quiz
