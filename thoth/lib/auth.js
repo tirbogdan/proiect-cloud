@@ -4,15 +4,16 @@ import cookie from "cookie";
 export function verifyAuth(cookieString, jwtSecret) {
   if (!cookieString) return false;
 
-  const cookies = cookie.parse(cookieString);
-  const token = cookies.token;
-
-  if (!token) return false;
-
   try {
+    const cookies = cookie.parse(cookieString);
+    const token = cookies.token;
+
+    if (!token) return false;
+
     jwt.verify(token, jwtSecret);
     return true;
-  } catch {
+  } catch (err) {
+    console.error("verifyAuth error:", err);
     return false;
   }
 }
